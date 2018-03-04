@@ -1,0 +1,731 @@
+﻿@model IEnumerable<hrm_system.Models.Holiday>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "Holidays"))
+{
+    <!-- BEGIN PAGE HEADER-->
+    <h3 class="page-title">
+        Holiday <small>Holidays List</small>
+    </h3>
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="~/Admin/">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Holidays</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Holidays list of 2018 </a>
+            </li>
+        </ul>
+
+    </div>
+    <!-- END PAGE HEADER-->
+    <!-- BEGIN PAGE CONTENT-->
+
+    <div id="load">
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-3">
+            <a class="btn green" data-toggle="modal" href="~/Holidays/Create">
+                Add Holidays
+                <i class="fa fa-plus"></i>
+            </a>
+        </div>
+        <div class="col-md-offset-6 col-md-3 ">
+
+        </div>
+
+    </div>
+
+    <hr>
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="ver-inline-menu tabbable margin-bottom-10">
+                <li>
+                    <a data-toggle="tab" href="#January">
+                        <i class="fa fa-calendar"></i> January
+                    </a>
+                    <span class="after">
+                    </span>
+                </li>
+                <li class="active">
+                    <a data-toggle="tab" href="#February">
+                        <i class="fa fa-calendar"></i> February
+                    </a>
+                    <span class="after">
+                    </span>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#March">
+                        <i class="fa fa-calendar"></i> March
+                    </a>
+                    <span class="after">
+                    </span>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#April">
+                        <i class="fa fa-calendar"></i> April
+                    </a>
+                    <span class="after">
+                    </span>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#May">
+                        <i class="fa fa-calendar"></i> May
+                    </a>
+                    <span class="after">
+                    </span>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#June">
+                        <i class="fa fa-calendar"></i> June
+                    </a>
+                    <span class="after">
+                    </span>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#July">
+                        <i class="fa fa-calendar"></i> July
+                    </a>
+                    <span class="after">
+                    </span>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#August">
+                        <i class="fa fa-calendar"></i> August
+                    </a>
+                    <span class="after">
+                    </span>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#September">
+                        <i class="fa fa-calendar"></i> September
+                    </a>
+                    <span class="after">
+                    </span>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#October">
+                        <i class="fa fa-calendar"></i> October
+                    </a>
+                    <span class="after">
+                    </span>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#November">
+                        <i class="fa fa-calendar"></i> November
+                    </a>
+                    <span class="after">
+                    </span>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#December">
+                        <i class="fa fa-calendar"></i> December
+                    </a>
+                    <span class="after">
+                    </span>
+                </li>
+
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div class="tab-content">
+                <div id="January" class="tab-pane ">
+                    <div class="portlet box blue">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-calendar"></i>January
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <div class="table-scrollable">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th> # </th>
+                                            <th> Date </th>
+                                            <th> Occasion </th>
+                                            <th> Day </th>
+                                            <th> Action </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr id="@item.id">
+                                                <td> @item.id</td>
+                                                <td> @item.date </td>
+                                                <td> @item.ocassions </td>
+
+                                                <td>
+                                                    <button type="button" href="~/Holidays/Delete/@item.id" class="btn btn-xs red">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="February" class="tab-pane  active ">
+                    <div class="portlet box blue">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-calendar"></i>February
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <div class="table-scrollable">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th> # </th>
+                                            <th> Date </th>
+                                            <th> Occasion </th>
+                                            <th> Day </th>
+                                            <th> Action </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr id="@item.id">
+                                                <td> @item.id</td>
+                                                <td> @item.date </td>
+                                                <td> @item.ocassions </td>
+
+                                                <td>
+                                                    <button type="button" href="~/Holidays/Delete/@item.id" class="btn btn-xs red">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+
+
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="March" class="tab-pane ">
+                    <div class="portlet box blue">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-calendar"></i>March
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <div class="table-scrollable">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th> # </th>
+                                            <th> Date </th>
+                                            <th> Occasion </th>
+                                            <th> Day </th>
+                                            <th> Action </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr id="@item.id">
+                                                <td> @item.id</td>
+                                                <td> @item.date </td>
+                                                <td> @item.ocassions </td>
+
+                                                <td>
+                                                    <button type="button" href="~/Holidays/Delete/@item.id" class="btn btn-xs red">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="April" class="tab-pane ">
+                    <div class="portlet box blue">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-calendar"></i>April
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <div class="table-scrollable">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th> # </th>
+                                            <th> Date </th>
+                                            <th> Occasion </th>
+                                            <th> Day </th>
+                                            <th> Action </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr id="@item.id">
+                                                <td> @item.id</td>
+                                                <td> @item.date </td>
+                                                <td> @item.ocassions </td>
+
+                                                <td>
+                                                    <button type="button" href="~/Holidays/Delete/@item.id" class="btn btn-xs red">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="May" class="tab-pane ">
+                    <div class="portlet box blue">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-calendar"></i>May
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <div class="table-scrollable">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th> # </th>
+                                            <th> Date </th>
+                                            <th> Occasion </th>
+                                            <th> Day </th>
+                                            <th> Action </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr id="@item.id">
+                                                <td> @item.id</td>
+                                                <td> @item.date </td>
+                                                <td> @item.ocassions </td>
+
+                                                <td>
+                                                    <button type="button" href="~/Holidays/Delete/@item.id" class="btn btn-xs red">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="June" class="tab-pane ">
+                    <div class="portlet box blue">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-calendar"></i>June
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <div class="table-scrollable">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th> # </th>
+                                            <th> Date </th>
+                                            <th> Occasion </th>
+                                            <th> Day </th>
+                                            <th> Action </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr id="@item.id">
+                                                <td> @item.id</td>
+                                                <td> @item.date </td>
+                                                <td> @item.ocassions </td>
+
+                                                <td>
+                                                    <button type="button" href="~/Holidays/Delete/@item.id" class="btn btn-xs red">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="July" class="tab-pane ">
+                    <div class="portlet box blue">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-calendar"></i>July
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <div class="table-scrollable">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th> # </th>
+                                            <th> Date </th>
+                                            <th> Occasion </th>
+                                            <th> Day </th>
+                                            <th> Action </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr id="@item.id">
+                                                <td> @item.id</td>
+                                                <td> @item.date </td>
+                                                <td> @item.ocassions </td>
+
+                                                <td>
+                                                    <button type="button" href="~/Holidays/Delete/@item.id" class="btn btn-xs red">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="August" class="tab-pane ">
+                    <div class="portlet box blue">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-calendar"></i>August
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <div class="table-scrollable">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th> # </th>
+                                            <th> Date </th>
+                                            <th> Occasion </th>
+                                            <th> Day </th>
+                                            <th> Action </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr id="@item.id">
+                                                <td> @item.id</td>
+                                                <td> @item.date </td>
+                                                <td> @item.ocassions </td>
+
+                                                <td>
+                                                    <button type="button" href="~/Holidays/Delete/@item.id" class="btn btn-xs red">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="September" class="tab-pane ">
+                    <div class="portlet box blue">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-calendar"></i>September
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <div class="table-scrollable">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th> # </th>
+                                            <th> Date </th>
+                                            <th> Occasion </th>
+                                            <th> Day </th>
+                                            <th> Action </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr id="@item.id">
+                                                <td> @item.id</td>
+                                                <td> @item.date </td>
+                                                <td> @item.ocassions </td>
+
+                                                <td>
+                                                    <button type="button" href="~/Holidays/Delete/@item.id" class="btn btn-xs red">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="October" class="tab-pane ">
+                    <div class="portlet box blue">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-calendar"></i>October
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <div class="table-scrollable">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th> # </th>
+                                            <th> Date </th>
+                                            <th> Occasion </th>
+                                            <th> Day </th>
+                                            <th> Action </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr id="@item.id">
+                                                <td> @item.id</td>
+                                                <td> @item.date </td>
+                                                <td> @item.ocassions </td>
+
+                                                <td>
+                                                    <button type="button" href="~/Holidays/Delete/@item.id" class="btn btn-xs red">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="November" class="tab-pane ">
+                    <div class="portlet box blue">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-calendar"></i>November
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <div class="table-scrollable">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th> # </th>
+                                            <th> Date </th>
+                                            <th> Occasion </th>
+                                            <th> Day </th>
+                                            <th> Action </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr id="@item.id">
+                                                <td> @item.id</td>
+                                                <td> @item.date </td>
+                                                <td> @item.ocassions </td>
+
+                                                <td>
+                                                    <button type="button" href="~/Holidays/Delete/@item.id" class="btn btn-xs red">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="December" class="tab-pane ">
+                    <div class="portlet box blue">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-calendar"></i>December
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+                            <div class="table-scrollable">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th> # </th>
+                                            <th> Date </th>
+                                            <th> Occasion </th>
+                                            <th> Day </th>
+                                            <th> Action </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr id="@item.id">
+                                                <td> @item.id</td>
+                                                <td> @item.date </td>
+                                                <td> @item.ocassions </td>
+
+                                                <td>
+                                                    <button type="button" href="~/Holidays/Delete/@item.id" class="btn btn-xs red">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        }
+
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE CONTENT-->
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

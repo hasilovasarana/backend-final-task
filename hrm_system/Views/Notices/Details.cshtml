@@ -1,0 +1,59 @@
+﻿@model hrm_system.Models.Notice
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Notice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.notice_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.notice_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.notice_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.notice_description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.notice_create_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.notice_create_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.employee_image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.employee_image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notice_Status.status_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notice_Status.status_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,174 @@
+﻿@model IEnumerable<hrm_system.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title">
+    Employees <small>Employee List</small>
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="~/Admin/Index">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="~/Employees/">Employees</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="~/Employees/Index">Employee List</a>
+        </li>
+    </ul>
+
+</div>
+<!-- END PAGE HEADER-->
+<!-- BEGIN PAGE CONTENT-->
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div id="load">
+
+
+        </div>
+        <a href="~/Employees/Create" class="btn green" style="margin:10px;">
+            Add New Employee <i class="fa fa-plus"></i>
+        </a>
+
+        @*........................SEARCH AREA...........................................*@
+
+
+
+        @*<form>
+            <input type="text" name="search" placeholder="Search.." id="Search">
+        </form>*@
+        @*.............................................................................................*@
+        <hr>
+        <div class="portlet box blue">
+
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-users"></i>Employees List
+                </div>
+                <div class="tools">
+                </div>
+            </div>
+
+            <div class="portlet-body">
+
+                <table class="table table-striped table-bordered table-hover" id="sample_employees">
+                    <thead>
+                        <tr>
+                            <th class="text-center">
+                                EmployeeID
+                            </th>
+                            <th class="text-center">
+                                Image
+                            </th>
+                            <th style="text-align: center">
+                                Name
+                            </th>
+                            <th class="text-center">
+                                Dept/Designation
+                            </th>
+                            <th class="text-center">
+                                At Work
+                            </th>
+                            <th class="text-center">
+                                Phone
+                            </th>
+                            <th class="text-center">
+                                Status
+                            </th>
+                            <th class="text-center">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="body">
+                        @foreach (var item in Model)
+                        {
+                            <tr id="@item.id">
+                                <td>
+                                    @item.id
+
+                                </td>
+                                <td class="text-center">
+                                    <img src="~/Upload/@item.employee_image" height="80px" alt="ProfileImage">
+
+                                </td>
+                                <td>
+                                    @item.employee_full_name
+                                </td>
+                                <td>
+                                    <p>Department: <strong></strong>@item.employee_departament_id</p>
+                                    <p>Designation: <strong></strong>@item.designation_id</p>
+                                </td>
+                                <td class="text-center">
+                                    @item.employee_work_duration
+
+                                </td>
+                                <td>
+                                    @item.employee_phone
+                                </td>
+                                <td>
+                                    <span class="label label-sm label-success">@item.employee_status_id</span>
+                                </td>
+                                <td class="">
+
+                                    <p> <a class="btn purple" href="~/Employees/Edit/@item.id"><i class="fa fa-edit"></i> View/Edit</a></p>
+
+
+                                    <p> <a class="btn red" style="width: 105px;" href="~/Employees/Delete/@item.id"><i class="fa fa-trash"></i> Delete</a></p>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+
+    </div>
+</div>
+<!-- END PAGE CONTENT-->
+
+
+@*<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function (f) {
+        var x;
+        $("#Search").keyup(function (f) {
+            x = $("#Search").val();
+            console.log(x)
+            $.ajax({
+                type: "Get",
+                data: {
+                    search: x,
+
+                },
+                url: "http://localhost:56723/Employees/Employee_Search",
+                contentType: "Html",
+                success: function (response) {
+                    $("#body").html(response)
+                },
+                error: function () {
+                    alert("Try again")
+                }
+
+
+            });
+        });
+
+    });
+</script>*@
+

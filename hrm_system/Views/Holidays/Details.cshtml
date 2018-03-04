@@ -1,0 +1,43 @@
+﻿@model hrm_system.Models.Holiday
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Holiday</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ocassions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ocassions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Month.month_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Month.month_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

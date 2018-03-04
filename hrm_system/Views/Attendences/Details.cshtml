@@ -1,0 +1,161 @@
+﻿@model hrm_system.Models.Attendence
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title">
+    Attendance
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="http://froiden.cloudapp.net/hrm_demo/admin/dashboard">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="http://froiden.cloudapp.net/hrm_demo/admin/attendances">Attendance</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#">Antonio Lima</a>
+
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- BEGIN PAGE CONTENT-->
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="portlet box green-meadow calendar">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-list"></i>Antonio Lima
+                </div>
+            </div>
+            <div class="portlet-body text-center">
+                <div class="row ">
+
+                    <div class="col-md-4 col-sm-4">
+                        <h2>Select</h2>
+                        <form role="form form-row-sepe">
+                            <div class="form-body alert alert-block alert-info fade in">
+
+                                <div class="row ">
+
+                                    <div class="col-md-12 ">
+                                        <div class="form-group">
+                                            <label>Select Employee</label>
+                                            <div class="input-group ">
+
+                                                <select class="form-control input-large select2me" data-placeholder="Select Employee..." onchange="redirect_to()" id="changeEmployee" name="employeeID">
+                                                <option value="4563150648" selected="selected">Antonio Lima</option>
+                                                <option value="954407020">Hj</option><option value="3859642115">Adnan</option>
+                                                <option value="5603586211">Ethyl Stroman</option><option value="7871906529">Tyshawn Gutmann</option>
+                                                <option value="1709182690">Jairo Waelchi</option><option value="4699270818">Cara Tillman</option>
+                                                <option value="8396374215">Garth Balistreri</option><option value="3644197848">Gladys Denesik</option>
+                                                <option value="9855209388">Trevion Haley</option><option value="6312382370">Zackery Kris</option>
+                                                <option value="4153265114">Aleen Flatley</option><option value="8869895352">Mariela Kutch</option>
+                                                <option value="3062446070">Jaron Conroy</option><option value="5264839730">Eino Rau</option>
+                                                <option value="2283120201">Marion Murazik</option><option value="7518034251">Cleora Keebler</option>
+                                                <option value="9616164020">Karli Nader</option><option value="2734392867">Charity Mraz</option>
+                                                <option value="itab">غسان</option><option value="1234">Pablo</option><option value="1547">Anton A</option>
+                                                <option value="emp1">Test</option><option value="1914">Priyanka</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row ">
+
+                                    <!--/span-->
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Month</label>
+                                            <div class="input-group">
+
+                                                <select class="form-control input-large select2me monthSelect" id="monthSelect" name="forMonth" onclick="changeMonthYear();return false;">
+                                                    <option value="01">January</option>
+                                                    <option value="02" selected='selected'>February</option>
+                                                    <option value="03">March</option>
+                                                    <option value="04">April</option>
+                                                    <option value="05">May</option>
+                                                    <option value="06">June</option>
+                                                    <option value="07">July</option>
+                                                    <option value="08">August</option>
+                                                    <option value="09">September</option>
+                                                    <option value="10">October</option>
+                                                    <option value="11">November</option>
+                                                    <option value="12">December</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row ">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Year</label>
+                                            <select class="form-control input-large select2me" id="yearSelect" name="forMonth" onclick="changeMonthYear();return false;">
+                                                <option value="2013">2013</option>
+
+                                                <option value="2014">2014</option>
+
+                                                <option value="2015">2015</option>
+
+                                                <option value="2016">2016</option>
+
+                                                <option value="2017">2017</option>
+
+                                                <option value="2018" selected='selected'>2018</option>
+
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!--/span-->
+
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="alert alert-danger text-center">
+                                            <strong>Attendance </strong>
+                                            <div id="attendanceReport"> NA </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+
+                                    <div class="col-md-6">
+                                        <div class="alert alert-danger text-center">
+                                            <strong>Attendance %</strong>
+                                            <div id="attendancePerReport"> NA </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+
+                                </div>
+                            </div>
+
+                        </form>
+
+
+                    </div>
+                    <div class="col-md-8 col-sm-8">
+                        <div id="calendar" class="has-toolbar text-center">
+                        </div>
+                    </div>
+                </div>
+                <!-- END CALENDAR PORTLET-->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END PAGE CONTENT-->

@@ -1,0 +1,195 @@
+﻿@model hrm_system.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.employee_image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employee_image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.employee_full_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employee_full_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.employee_departament_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employee_departament_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.employee_phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employee_phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.employee_date_of_birth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employee_date_of_birth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.employee_local_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employee_local_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.employee_permanent_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employee_permanent_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.employee_father_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employee_father_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.employee_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employee_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.employee_password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employee_password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.employee_work_duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employee_work_duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date_of_join)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_of_join)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.join_salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.join_salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.exit_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.exit_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.resume_files)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.resume_files)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.offer_letter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.offer_letter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.joinning_letter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.joinning_letter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contract_and_agreement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contract_and_agreement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_proof)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_proof)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Designation.designation_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Designation.designation_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_Status.employee_status_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Status.employee_status_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender.gender_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender.gender_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

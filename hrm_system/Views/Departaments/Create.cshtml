@@ -1,0 +1,70 @@
+﻿@model hrm_system.Models.Departament
+
+
+
+
+   
+    <div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title"><strong><i class="fa fa-plus"></i> New Department</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="portlet-body form">
+
+                        <!-- BEGIN FORM-->
+                        <form method="POST" action="~/Departaments/Create" accept-charset="UTF-8" class="form-horizontal ">
+                            
+
+
+                            <div class="form-body">
+
+                                <p class="text-success">
+                                    Department
+                                </p>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input class="form-control form-control-inline " name="departament_name" type="text" value="" placeholder="Department" />
+
+                                    </div>
+
+                                </div>
+                                <hr>
+                                <p class="text-success">
+                                    Designations
+                                </p>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <input class="form-control form-control-inline input-medium " name="designation_name" type="text" value="" placeholder="Designation #1" />
+                                    </div>
+                                    <div class="col-md-6">
+
+                                    </div>
+                                </div>
+                                <div id="insertBefore"></div>
+                                <button type="button" id="plusButton" class="btn btn-sm green form-control-inline">
+                                    More Designations <i class="fa fa-plus"></i>
+                                </button>
+
+                            </div>
+
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button type="submit" data-loading-text="Submitting..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Submit</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- END FORM-->
+                    </div>
+                </div>
+                <!-- END EXAMPLE TABLE PORTLET-->
+            </div>
+
+        </div>
+    </div>
+

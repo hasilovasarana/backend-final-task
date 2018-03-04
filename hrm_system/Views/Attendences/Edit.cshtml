@@ -1,0 +1,164 @@
+﻿@model hrm_system.Models.Attendence
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit","Attendences"))
+{
+    @Html.AntiForgeryToken()
+
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title">
+    Edit Attendance
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="http://froiden.cloudapp.net/hrm_demo/admin/dashboard">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="http://froiden.cloudapp.net/hrm_demo/admin/attendances">Attendace</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="">Update attendace</a>
+        </li>
+    </ul>
+
+</div>
+<!-- END PAGE HEADER-->
+<!-- BEGIN PAGE CONTENT-->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+
+        <div class="row">
+            <div class="col-md-4 form-group">
+                <form method="GET" action="~/Attendences/Create" accept-charset="UTF-8" class="form-horizontal">
+
+                    <div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
+                        <input type="text" class="form-control" name="date" readonly placeholder="select another date">
+                        <span class="input-group-btn">
+                            <button data-loading-text="Redirecting..." class="demo-loading-btn btn blue" type="submit"><i class="fa fa-calendar"></i> Edit</button>
+                        </span>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="col-md-4 form-group">
+
+
+
+            </div>
+            <div class="col-md-4 form-group text-right">
+
+                <span id="load_notification"></span>
+                <input type="checkbox" onchange="ToggleEmailNotification('attendance_notification');return false;" class="make-switch" name="attendance_notification" checked data-on-color="success" data-on-text="Yes" data-off-text="No" data-off-color="danger">
+                <strong>Email Notification</strong><br>
+
+
+            </div>
+
+
+
+        </div>
+
+        <hr>
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-edit"></i>
+                    Mark Attendance
+                </div>
+                <div class="tools">
+                </div>
+            </div>
+
+            <div class="portlet-body form">
+
+                <!-- BEGIN FORM-->
+                <form method="POST" action="http://froiden.cloudapp.net/hrm_demo/admin/attendances/2018-02-26" accept-charset="UTF-8" class="form-horizontal">
+                    <input name="_method" type="hidden" value="PATCH"><input name="_token" type="hidden" value="FkIPatNacaYzlCEFBEKtl0zBR99cvBNGaZR2a8JU">
+
+
+                    <div class="form-body">
+
+                        <h3 class="form-section">Date  26-Feb-2018</h3>
+
+                        <div class="form-group">
+
+                            <label class="col-md-1 control-group">EmployeeID</label>
+                            <label class="col-md-2 control-group">Name</label>
+                            <label class="col-md-2 control-group">Status </label>
+                            <label class="col-md-2 control-group leaveType" id="leaveTypeLabel">Type of leave </label>
+                            <label class="col-md-2 control-group"><span class="halfLeaveType" id="halfDayLabel">half Day leave type</span> </label>
+
+                            <label class="col-md-3 control-group reason" id="reasonLabel">Reason </label>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-1 control-group">4563150648 </label>
+                            <label class="col-md-2 control-group">Antonio Lima </label>
+                            <div class="col-md-2">
+                                <input type="checkbox" id="checkbox4563150648" onchange="showHide('4563150648');return false;" class="make-switch" name="checkbox[4563150648]" checked data-on-color="success" data-on-text="P" data-off-text="A" data-off-color="danger">
+                                <input type="hidden" name="employees[]" value="4563150648">
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-control leaveType" onchange="halfDayToggle(4563150648,this.value)" id="leaveType4563150648" name="leaveType[4563150648]"><option value="opi">opi</option><option value="summer vacations">summer vacations</option><option value="Maternity Leave">Maternity Leave</option><option value="Sick Leave">Sick Leave</option><option value="Annual" selected="selected">Annual</option><option value="Replacement">Replacement</option><option value="خطابات">خطابات</option><option value="sun">sun</option><option value="gsdfhfsghf">gsdfhfsghf</option><option value="JNJUJKN">JNJUJKN</option></select>
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-control halfLeaveType" id="halfLeaveType4563150648" name="leaveTypeWithoutHalfDay[4563150648]"><option value="opi">opi</option><option value="summer vacations">summer vacations</option><option value="Maternity Leave">Maternity Leave</option><option value="Sick Leave">Sick Leave</option><option value="Annual">Annual</option><option value="Replacement">Replacement</option><option value="خطابات">خطابات</option><option value="sun">sun</option><option value="gsdfhfsghf">gsdfhfsghf</option><option value="JNJUJKN">JNJUJKN</option></select>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control reason" id="reason4563150648" name="reason[4563150648]" placeholder="Absent Reason" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-group">954407020 </label>
+                            <label class="col-md-2 control-group">Hj </label>
+                            <div class="col-md-2">
+                                <input type="checkbox" id="checkbox954407020" onchange="showHide('954407020');return false;" class="make-switch" name="checkbox[954407020]" checked data-on-color="success" data-on-text="P" data-off-text="A" data-off-color="danger">
+                                <input type="hidden" name="employees[]" value="954407020">
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-control leaveType" onchange="halfDayToggle(954407020,this.value)" id="leaveType954407020" name="leaveType[954407020]"><option value="opi">opi</option><option value="summer vacations">summer vacations</option><option value="Maternity Leave">Maternity Leave</option><option value="Sick Leave">Sick Leave</option><option value="Annual">Annual</option><option value="Replacement">Replacement</option><option value="خطابات">خطابات</option><option value="sun">sun</option><option value="gsdfhfsghf">gsdfhfsghf</option><option value="JNJUJKN">JNJUJKN</option></select>
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-control halfLeaveType" id="halfLeaveType954407020" name="leaveTypeWithoutHalfDay[954407020]"><option value="opi">opi</option><option value="summer vacations">summer vacations</option><option value="Maternity Leave">Maternity Leave</option><option value="Sick Leave">Sick Leave</option><option value="Annual">Annual</option><option value="Replacement">Replacement</option><option value="خطابات">خطابات</option><option value="sun">sun</option><option value="gsdfhfsghf">gsdfhfsghf</option><option value="JNJUJKN">JNJUJKN</option></select>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control reason" id="reason954407020" name="reason[954407020]" placeholder="Absent Reason" value="">
+                            </div>
+                        </div>
+                 
+
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" data-loading-text="Submitting..." class="demo-loading-btn btn green"><i class="fa fa-edit"></i> Submit</button>
+
+                                </div>
+                            </div>
+                        </div>
+                </div>
+</form>
+
+                <!-- END FORM-->
+
+            </div>
+        </div>
+
+        </div>
+    </div>
+        }
+           

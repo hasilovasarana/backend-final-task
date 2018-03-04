@@ -1,0 +1,59 @@
+﻿@model hrm_system.Models.Expense
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Expense</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.item_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.item_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.purchase_from)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.purchase_from)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.purchase_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.purchase_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.amount_price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amount_price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.attach_bill_file)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.attach_bill_file)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

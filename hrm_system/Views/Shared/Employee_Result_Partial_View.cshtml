@@ -1,0 +1,45 @@
+﻿@*@model IEnumerable<hrm_system.Models.Employee>
+
+
+   
+
+        @foreach (var item in Model)
+        {
+            <tr id="@item.id">
+                <td>
+                    @item.id
+
+                </td>
+                <td class="text-center">
+                    <img src="~/Upload/@item.employee_image" height="80px" alt="ProfileImage">
+
+                </td>
+                <td>
+                    @item.employee_full_name
+                </td>
+                <td>
+                    <p>Department: <strong></strong>@item.employee_departament_id</p>
+                    <p>Designation: <strong></strong>@item.designation_id</p>
+                </td>
+                <td class="text-center">
+                    @item.employee_work_duration
+
+                </td>
+                <td>
+                    @item.employee_phone
+                </td>
+                <td>
+                    <span class="label label-sm label-success">@item.employee_status_id</span>
+                </td>
+                <td class="">
+
+                    <p> <a class="btn purple" href="~/Employees/Edit/@item.id"><i class="fa fa-edit"></i> View/Edit</a></p>
+
+
+                    <p> <a class="btn red" style="width: 105px;" href="~/Employees/Delete/@item.id"><i class="fa fa-trash"></i> Delete</a></p>
+                </td>
+            </tr>
+        }*@
+
+   
+

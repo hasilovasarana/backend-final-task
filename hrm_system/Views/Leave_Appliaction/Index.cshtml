@@ -1,0 +1,133 @@
+﻿@model IEnumerable<hrm_system.Models.Leave_Appliaction>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "Leave_Appliaction"))
+{
+    <!-- BEGIN PAGE HEADER-->
+    <h3 class="page-title">
+        Leave Applications
+    </h3>
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="http://froiden.cloudapp.net/hrm_demo/admin/dashboard">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Leave Applications</a>
+                <i class="fa "></i>
+            </li>
+
+        </ul>
+
+    </div>
+    <!-- END PAGE HEADER-->
+    <!-- BEGIN PAGE CONTENT-->
+    <div class="row">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6 form-group text-right">
+
+            <span id="load_notification"></span>
+            <input type="checkbox" onchange="ToggleEmailNotification('leave_notification');return false;" class="make-switch" name="leave_notification" checked data-on-color="success" data-on-text="Yes" data-off-text="No" data-off-color="danger">
+            <strong>Email Notification</strong><br>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+            <div class="note note-warning"><strong>Disabled!</strong> Email function is disabled for <strong>Demo version</strong> </div>
+            <div id="load">
+
+
+            </div>
+
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-rocket"></i>Applications
+                    </div>
+                    <div class="tools">
+                    </div>
+                </div>
+
+                <div class="portlet-body">
+
+
+                    <table class="table table-striped table-bordered table-hover" id="applications">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>Leave Type</th>
+                                <th>Reason</th>
+                                <th>Applied on</th>
+                                <th>Status</th>
+                                <th>Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.employee_id </td>
+                                    <td> @item.Employee.employee_full_name </td>
+                                    <td> @item.app_date </td>
+                                    <td> @item.Type_of_Leave.leave_type </td>
+                                    <td> @item.reason </td>
+                                    <td> @item.app_on_date </td>
+                                    <td> @item.Leave_Status.leave_status_name </td>
+                                    <td> <a href="~/Leave_of_Application/Delete/@item.id">Delete</a> </td>
+                                    <td> <a href="~/Leave_of_Application/Edit/@item.id">Edit</a> </td>
+                                </tr>
+                            }
+
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+            <!-- END EXAMPLE TABLE PORTLET-->
+
+        </div>
+    </div>
+    <!-- END PAGE CONTENT-->
+
+
+    <form method="POST" action="@Url.Action("Index","HR")" accept-charset="UTF-8" id="edit_form_application">
+        <input name="_method" type="hidden" value="PATCH"><input name="_token" type="hidden" value="FkIPatNacaYzlCEFBEKtl0zBR99cvBNGaZR2a8JU">
+        <div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <span class="caption-subject font-red-sunglo bold uppercase">Leave Application</span>
+                    </div>
+                    <div class="modal-body" id="modal-data-application">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+}
+
+
+
+@{
+    Html.RenderAction("Delete");
+}

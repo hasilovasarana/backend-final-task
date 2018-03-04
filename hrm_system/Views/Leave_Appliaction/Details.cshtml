@@ -1,0 +1,67 @@
+﻿@model hrm_system.Models.Leave_Appliaction
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Leave_Appliaction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.app_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.app_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.app_on_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.app_on_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.employee_image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.employee_image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Leave_Status.leave_status_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Leave_Status.leave_status_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type_of_Leave.leave_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type_of_Leave.leave_type)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
